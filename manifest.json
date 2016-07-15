@@ -1,0 +1,28 @@
+{
+  "name": "Facebook NOtrack",
+  "description": "Remove Facebook tracking from links on Facebook",
+  "version": "0.1",
+  "icons": { 
+    "16": "images/notrack16.png",
+    "32": "images/notrack32.png",
+    "48": "images/notrack48.png",
+    "128": "images/notrack128.png" 
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.facebook.com/*", "https://*.messenger.com/*"],
+      "js": ["notrack.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "NO Tracking"
+  },
+  "manifest_version": 2
+}

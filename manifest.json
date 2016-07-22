@@ -1,5 +1,6 @@
 {
   "name": "Facebook NOtrack",
+  "short_name": "Fb-NOtrack",
   "description": "Remove Facebook tracking from links on Facebook",
   "version": "0.1",
   "icons": { 

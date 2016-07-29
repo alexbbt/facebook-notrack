@@ -1,7 +1,13 @@
-// Called when the user clicks on the browser action.
-chrome.browserAction.onClicked.addListener(function(tab) {
-  // No tabs or host permissions needed!
-  chrome.tabs.executeScript({
-    code: "window.notrack()",
-  });
-});
+chrome.browserAction.onClicked.addListener(
+	function(tab) {
+		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+			chrome.tabs.sendMessage(tab.id, {message: "cleanAll"});
+		});
+	});
+
+chrome.runtime.onMessage.addListener(
+	function(request, sender, sendResponse) {
+		amplitude.getInstance().logEvent(request.event);
+	});
+
+amplitude.getInstance().init("77685d9e75c120a740136a4affe5d41f");

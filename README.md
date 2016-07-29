@@ -1,7 +1,7 @@
 # facebook-notrack
 Remove Facebook tracking from links shared on facebook
 
-This extension watches facebook.com and messange.com for new links showing up on the page. 
+This extension watches facebook.com and messenge.com for new links showing up on the page. 
 When a new link is found it strips all tracking from the the url and removes JS hooks from the element itself.
 
 [Chrome Store link: https://chrome.google.com/webstore/detail/facebook-notrack/iooopknbeaeahkgpbcefjkkfcjjnbegm](https://chrome.google.com/webstore/detail/facebook-notrack/iooopknbeaeahkgpbcefjkkfcjjnbegm)

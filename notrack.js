@@ -32,6 +32,7 @@
 			link.href = cleanUrl(link.href);
 			link.removeAttribute("onmouseover");
 			link.removeAttribute("onclick");
+			chrome.runtime.sendMessage({event: "Link Cleaned"});
 		}
 		return link;
 	}
@@ -42,8 +43,17 @@
 		return url;
 	}
 
-	window.notrack = removetrackingCodeFromAllLinks;
 	window.addEventListener('DOMNodeInserted', removeTrackingCode);
 	window.addEventListener('DOMSubtreeModified', removeTrackingCode);
 	window.addEventListener('DOMContentLoaded', removeTrackingCode);
+
+	chrome.runtime.onMessage.addListener(
+		function(request, sender, sendResponse) {
+			switch(request.message) {
+				case "cleanAll":
+				default:
+					removetrackingCodeFromAllLinks();
+					break;
+			}
+		});
 })()

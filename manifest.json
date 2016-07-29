@@ -2,7 +2,7 @@
   "name": "Facebook NOtrack",
   "short_name": "Fb-NOtrack",
   "description": "Remove Facebook tracking from links on Facebook",
-  "version": "0.1",
+  "version": "0.2",
   "icons": { 
     "16": "images/notrack16.png",
     "32": "images/notrack32.png",
@@ -13,7 +13,7 @@
     "activeTab"
   ],
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["log.js", "background.js"],
     "persistent": false
   },
   "content_scripts": [
